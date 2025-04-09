@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Animated Navbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Scroll Animation -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,20 +24,15 @@
         </div>
         
         <ul class="nav-links">
-            <li><a href="#home" class="nav-link"><span>Home</span></a></li>
-            <li><a href="#features" class="nav-link"><span>Facts</span></a></li>
-            <li><a href="#products" class="nav-link"><span>Predictor</span></a></li>
-            <li><a href="#about" class="nav-link"><span>Analysis</span></a></li>
-            <li><a href="https://external-link.com" class="nav-link" target="_blank"><span>Tips</span></a></li>
+            <li><a href="#hero-section" class="nav-link"><span>Home</span></a></li>
+            <li><a href="#analysis-section" class="nav-link"><span>Facts</span></a></li>
+            <li><a href="#Predictor" class="nav-link"><span>Predictor</span></a></li>
+            <li><a href="#analysis" class="nav-link"><span>Analysis</span></a></li>
+            <li><a href="#gallery" class="nav-link" target=""><span>Gallery</span></a></li>
         </ul>
     </nav>
-<!-- 
-    <main class="content">
-        <h1>Your Content Goes Here</h1>
-        <p>This content appears below the navbar with proper spacing.</p>
-    </main> -->
 
-    <section class="hero-section">
+    <section class="hero-section" id="hero-section">
         <div class="overlay"></div>
         <img src="field2.jpg" alt="Cornfield Background" class="background-img" id="bg-image">
       
@@ -44,16 +42,286 @@
           </h1>
         </div>
       </section>
+
+      <!-- Facts -->
+      <section id="analysis-section" class="analysis-section">
+        <div class="analysis-bg"></div>
       
+        <div class="analysis-content">
+          <h2 class="analysis-title" data-aos="fade-up">Crop Analysis Insights</h2>
       
+          <div class="analysis-grid">
+            <div class="analysis-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="analysis-text">
+                <h3>Rainfall Dependency</h3>
+                <p>Over 60% of crops in India rely heavily on monsoon patterns, affecting yield consistency.</p>
+              </div>
+            </div>
       
+            <div class="analysis-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="analysis-text">
+                <h3>Soil Types</h3>
+                <p>Black soil retains moisture and is ideal for cotton, while alluvial soil supports rice and wheat.</p>
+              </div>
+            </div>
       
+            <div class="analysis-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="analysis-text">
+                <h3>Water Usage</h3>
+                <p>Sugarcane uses 70% more water than wheat, making crop planning essential in arid regions.</p>
+              </div>
+            </div>
       
+            <div class="analysis-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="analysis-text">
+                <h3>Soil Moisture</h3>
+                <p>Optimal growth for rice requires 50–60% moisture. Sensors help maintain this for better yield.</p>
+              </div>
+            </div>
       
+            <div class="analysis-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="analysis-text">
+                <h3>Topsoil Erosion</h3>
+                <p>Over 24 billion tons of fertile topsoil are lost annually worldwide, reducing productivity.</p>
+              </div>
+            </div>
       
+            <div class="analysis-card" data-aos="fade-up" data-aos-delay="600">
+              <div class="analysis-text">
+                <h3>Soil pH Levels</h3>
+                <p>Most crops thrive between pH 6.0–7.5. pH monitoring helps in nutrient absorption accuracy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Predictor">
+        <section class="animated-box-section" id="predictor">
+          <h2 class="section-title">Crop Predictor</h2>
+          <div class="three-d-box">
+              <img src="main.jpg" alt="Crop" class="box-image">
+              <a href="https://abhishek-nadagiri.github.io/croppredictor/" target="_blank"><button class="box-button">Click to predict</button></a></div>
+          </div>
+      </section>
+      </section>
+
+      <section class="soil-table-section" id="analysis">
+        <h2 class="soil-heading">Analyzed Soil Health Report</h2>
+        <div class="table-3d-wrapper">
+            <table class="soil-table-3d">
+                <thead>
+                    <tr>
+                        <th>Soil Type</th>
+                        <th>Moisture</th>
+                        <th>pH</th>
+                        <th>Rainfall</th>
+                        <th>Fertilizer</th>
+                        <th>Recommended Crops</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Loamy</td><td>High</td><td>6.5</td><td>Moderate</td><td>Low</td><td>Wheat, Rice</td></tr>
+                    <tr><td>Clay</td><td>Medium</td><td>7.0</td><td>High</td><td>Medium</td><td>Cotton, Soybean</td></tr>
+                    <tr><td>Sandy</td><td>Low</td><td>5.5</td><td>Low</td><td>High</td><td>Millet, Groundnut</td></tr>
+                    <tr><td>Silty</td><td>High</td><td>6.8</td><td>Moderate</td><td>Medium</td><td>Barley, Sugarcane</td></tr>
+                    <tr><td>Peaty</td><td>Very High</td><td>4.8</td><td>High</td><td>Low</td><td>Vegetables</td></tr>
+                    <tr><td>Chalky</td><td>Low</td><td>7.5</td><td>Low</td><td>Medium</td><td>Beet, Spinach</td></tr>
+                    <tr><td>Saline</td><td>Medium</td><td>8.0</td><td>Low</td><td>Low</td><td>Quinoa</td></tr>
+                    <tr><td>Red Soil</td><td>Medium</td><td>6.0</td><td>Medium</td><td>High</td><td>Pulses</td></tr>
+                    <tr><td>Black Soil</td><td>High</td><td>6.9</td><td>High</td><td>Medium</td><td>Cotton, Sorghum</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
       
-    
+
+      <!-- Facts Script --> 
+      <!-- tsParticles for Crop Particles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.4/tsparticles.bundle.min.js"></script>
+<div id="cropParticles"></div>
+<script>
+    // Hover effect with dramatic follow
+    document.querySelectorAll('.analysis-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      });
+  
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--x', '50%');
+        card.style.setProperty('--y', '50%');
+      });
+    });
+  </script>
+
+
+<div id="cropParticles"></div>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.4/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("cropParticles", {
+    fullScreen: { enable: true, zIndex: 0 },
+    particles: {
+      number: { value: 20 },
+      shape: {
+        type: "char",
+        character: {
+          value: ["🌾", "🌱", "🌽"],
+          font: "Verdana",
+          weight: "bold"
+        }
+      },
+      color: { value: "#00ff99" },
+      size: { value: 18 },
+      move: {
+        enable: true,
+        speed: 1,
+        random: true,
+        outModes: { default: "bounce" }
+      },
+      opacity: { value: 0.6 }
+    },
+    background: { color: "transparent" }
+  });
+</script>
+
+<script>
+  tsParticles.load("cropParticles", {
+    fullScreen: { enable: true, zIndex: 0 },
+    particles: {
+      number: { value: 20 },
+      shape: {
+        type: "char",
+        character: {
+          value: ["🌾", "🌱", "🌽"],
+          font: "Verdana",
+          weight: "bold"
+        }
+      },
+      color: { value: "#00ff99" },
+      size: { value: 18 },
+      move: {
+        enable: true,
+        speed: 1,
+        random: true,
+        outModes: { default: "bounce" }
+      },
+      opacity: { value: 0.6 }
+    },
+    background: { color: "transparent" }
+  });
+</script>
+<script>
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = +counter.parentElement.getAttribute('data-count');
+        let count = 0;
+  
+        const update = () => {
+          const increment = target / 80;
+          if (count < target) {
+            count += increment;
+            counter.innerText = Math.floor(count);
+            requestAnimationFrame(update);
+          } else {
+            counter.innerText = target.toLocaleString();
+          }
+        };
+        update();
+      });
+    }
+  
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+  
+    let started = false;
+    window.addEventListener('scroll', () => {
+      const section = document.getElementById('facts-section');
+      if (!started && isInViewport(section)) {
+        animateCounters();
+        started = true;
+      }
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.fact-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      });
+    });
+  </script>
+<!-- Facts Script ENDS -->
+
+  <!-- Gallery section -->
+  <section id="gallery" class="carousel-gallery">
+    <h2 class="gallery-title" data-aos="fade-up">Gallery</h2>
+  
+    <div class="swiper myGallerySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="field.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="field.jpg" alt="Slide 2"></div>
+        <div class="swiper-slide"><img src="field.jpg" alt="Slide 3"></div>
+        <div class="swiper-slide"><img src="field.jpg" alt="Slide 4"></div>
+        <div class="swiper-slide"><img src="field.jpg" alt="Slide 5"></div>
+        <div class="swiper-slide"><img src="field.jpg" alt="Slide 6"></div>
+      </div>
+  
+      <!-- Navigation Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+  
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  
+  
+<!-- Gallery section ends   -->
+ <!-- Gallery script -->
+ <!-- Swiper.js CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".myGallerySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    effect: "slide", // 
+    speed: 900, 
+  });
+</script>
+
+
+<!-- gallery script ends -->
+   
+  
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once: true, duration: 1200 });</script>
+
 </body>
 </html>

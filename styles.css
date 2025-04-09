@@ -1,3 +1,4 @@
+/* ========== ROOT & GLOBAL ========== */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #34495e;
@@ -5,6 +6,10 @@
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
     --glass-color: rgba(44, 62, 80, 0.85);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -20,14 +25,12 @@ body {
     overflow-x: hidden;
 }
 
-
-
-
 .content {
     padding: 80px 5% 40px;
     margin-top: 80px;
 }
 
+/* ========== NAVBAR ========== */
 .navbar {
     position: fixed;
     top: 0;
@@ -99,12 +102,6 @@ body {
     display: inline-block;
 }
 
-/* Hover effect for links */
-.nav-link {
-    position: relative;
-    overflow: hidden;
-}
-
 .nav-link::after {
     content: '';
     position: absolute;
@@ -122,13 +119,12 @@ body {
     transform-origin: bottom left;
 }
 
-/* Glow effect */
 .nav-link:hover {
     color: var(--accent-color);
     box-shadow: 0 0 8px var(--accent-color), 0 0 12px var(--accent-color);
 }
 
-/* Hamburger and Menu Styles */
+/* HAMBURGER MENU */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -151,39 +147,28 @@ body {
     transition: all 0.3s ease;
 }
 
-.hamburger span:nth-child(1) {
-    top: 0;
-}
-
-.hamburger span:nth-child(2) {
-    top: 11px;
-}
-
-.hamburger span:nth-child(3) {
-    top: 22px;
-}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 11px; }
+.hamburger span:nth-child(3) { top: 22px; }
 
 .hamburger.open span:nth-child(1) {
     top: 11px;
     transform: rotate(135deg);
 }
-
 .hamburger.open span:nth-child(2) {
     opacity: 0;
     left: -30px;
 }
-
 .hamburger.open span:nth-child(3) {
     top: 11px;
     transform: rotate(-135deg);
 }
 
-/* Mobile Styles */
+/* MOBILE MENU */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
     }
-
     .nav-links {
         position: fixed;
         top: 0;
@@ -196,63 +181,26 @@ body {
         align-items: center;
         padding: 40px 0;
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         transition: right 0.5s ease;
         z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     }
-
     .nav-links.active {
         right: 0;
     }
-
     .nav-links li {
         margin: 15px 0;
         opacity: 0;
         transform: translateX(30px);
         transition: all 0.4s ease;
     }
-
     .nav-links.active li {
         opacity: 1;
         transform: translateX(0);
         transition-delay: calc(0.1s * var(--i));
     }
-
-    .nav-link {
-        font-size: 1.2rem;
-        padding: 12px 25px;
-    }
-
-    .content {
-        margin-top: 70px;
-        padding-top: 20px;
-    }
 }
 
-/* Desktop Styles */
-@media (min-width: 769px) {
-    .nav-links {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .hamburger {
-        display: none;
-    }
-
-    .nav-links li {
-        margin: 0 20px;
-        position: relative;
-    }
-}
-
-
-
-/*Home*/
-
-/* Hero Section */
+/* ========== HERO SECTION ========== */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -261,9 +209,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .background-img {
+}
+
+.background-img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -272,26 +220,24 @@ body {
     opacity: 0;
     transform: scale(1.1);
     animation: bgFadeIn 3s ease-in-out forwards;
-  }
-  
-  @keyframes bgFadeIn {
+}
+
+@keyframes bgFadeIn {
     to {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
-  
-  /* Dark overlay to dim the image */
-  .overlay {
+}
+
+.overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* dark overlay */
+    background: rgba(0, 0, 0, 0.65);
     z-index: 1;
-  }
-  
-  /* Glass effect box */
-  .glass-box {
+}
+
+.glass-box {
     z-index: 2;
     padding: 2rem 3rem;
     background: rgba(255, 255, 255, 0.05);
@@ -300,42 +246,307 @@ body {
     backdrop-filter: blur(12px);
     box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
     text-align: center;
-    animation: bgFadeIn 3s ease-in-out forwards;
-  }
-  
-  /* Responsive Text */
-  .hero-text {
+}
+
+.hero-text {
     font-size: 3rem;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    white-space: nowrap;
     display: flex;
-    align-items: center;
     justify-content: center;
-    
-  }
-  
-  .cursor {
-    display: inline-block;
-    color: white;
-    font-weight: 500;
+    white-space: nowrap;
+}
+
+.cursor {
     animation: blink 0.7s steps(1) infinite;
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     50% { opacity: 0; }
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .hero-text {
-      font-size: 2rem;
-      animation: bgFadeIn 3s ease-in-out forwards;
+        font-size: 2rem;
     }
-  
     .glass-box {
-      padding: 1.5rem 2rem;
+        padding: 1.5rem 2rem;
     }
-  }
-  
+}
+
+/* ========== ANALYSIS SECTION ========== */
+.analysis-section {
+    background-color: #000;
+    color: white;
+    padding: 120px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.analysis-bg {
+    background: url('your-crop-image.jpg') no-repeat center / cover;
+    opacity: 0.08;
+    position: absolute;
+    inset: 0;
+    animation: slowPan 30s infinite linear;
+}
+
+@keyframes slowPan {
+    from { transform: scale(1.05) translateX(0); }
+    to   { transform: scale(1.05) translateX(-20px); }
+}
+
+.analysis-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.analysis-title {
+    font-size: 48px;
+    margin-bottom: 70px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.analysis-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.analysis-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 35px 25px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    --x: 50%;
+    --y: 50%;
+    cursor: default;
+}
+
+.analysis-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 50px rgba(0,255,170,0.3);
+    border-color: rgba(0,255,170,0.2);
+}
+
+.analysis-card::before {
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(0,255,170,0.25), transparent 60%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.analysis-card:hover::before {
+    opacity: 1;
+}
+
+.analysis-text h3 {
+    color: #00ff99;
+    font-size: 22px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(0,255,140,0.4);
+}
+
+.analysis-text p {
+    color: #ddd;
+    font-size: 16px;
+}
+
+/* ========== GALLERY ========== */
+.carousel-gallery {
+    padding: 80px 0;
+    background: linear-gradient(to right, #000000, #001f1f);
+    text-align: center;
+    color: white;
+}
+
+.gallery-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(0, 255, 140, 0.4);
+}
+
+.myGallerySwiper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.swiper-slide img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.3);
+    max-height: 400px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.03);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #00ffaa;
+    filter: drop-shadow(0 0 5px #00ffaa);
+}
+
+.swiper-pagination-bullet {
+    background: #00ffaa;
+    opacity: 0.7;
+}
+
+.animated-box-section {
+    padding: 60px 5%;
+    background: #0f111a;
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 40px;
+    color: #ffcc70;
+    text-shadow: 0 0 10px #ffcc70;
+}
+
+.three-d-box {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    perspective: 1000px;
+    transform: rotateX(5deg) rotateY(5deg);
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+    animation: floatBox 6s infinite;
+}
+
+.box-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ffcc70;
+    color: #1b1b2f;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 204, 112, 0.3);
+}
+
+.box-button:hover {
+    transform: scale(1.05);
+    background: #ffd88a;
+    box-shadow: 0 0 15px #ffcc70;
+}
+
+@keyframes floatBox {
+    0%, 100% { transform: rotateX(5deg) rotateY(5deg) translateY(0); }
+    50% { transform: rotateX(5deg) rotateY(5deg) translateY(-10px); }
+}
+
+/* ================= SOIL TABLE ================= */
+.soil-table-section {
+    padding: 60px 5%;
+    background: #0f111a;
+    color: #fff;
+    text-align: center;
+}
+
+.soil-heading {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 40px;
+    color: #ffcc70;
+    text-shadow: 0 0 12px #ffcc70;
+}
+
+.table-3d-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.soil-table-3d {
+    border-collapse: collapse;
+    background: #1e1f2f;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: rotateX(3deg) rotateY(2deg);
+    transition: transform 0.4s ease;
+    border-radius: 12px;
+    min-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.soil-table-3d th,
+.soil-table-3d td {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.soil-table-3d th {
+    background: #2d2f44;
+    color: #ffcc70;
+    font-weight: 600;
+}
+
+.soil-table-3d tbody tr:hover {
+    background: #2f354a;
+    transform: scale(1.01) translateZ(10px);
+    box-shadow: 0 0 12px #ffcc70;
+}
+
+/* Fade-up Animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0s;
+    color: white;
+}
